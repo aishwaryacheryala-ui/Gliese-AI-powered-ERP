@@ -21,3 +21,7 @@ Open http://127.0.0.1:5173. Node.js 18+ is sufficient; there are no dependencies
 7. Explore Treatment plans, Goals & progress, and Communication for the other modules.
 
 Family portal is a presentation mode in the same app, not an authentication or security boundary. Clinical values, contacts, reports and delivery statuses are fictional examples. No notification, invite, callback or query leaves the browser.
+
+## Deploy on Vercel
+
+Import this repository with the project root set to the repository root. The included `vercel.json` selects the static build, runs `npm run build`, and serves `dist/`. `server.mjs` is for local preview only and is not deployed. No environment variables or database are needed.

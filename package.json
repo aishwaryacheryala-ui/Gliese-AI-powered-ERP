@@ -1,1 +1,11 @@
-{"name":"xenia-care-demo","version":"1.0.0","private":true,"scripts":{"dev":"node server.mjs","start":"node server.mjs","check":"node --check src/app.js"}}
+{
+  "name": "xenia-care-demo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "check": "node --check src/app.js",
+    "build": "node scripts/build.mjs"
+  }
+}
