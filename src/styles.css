@@ -20,3 +20,27 @@ footer{gap:20px;line-height:1.7;flex-wrap:wrap}
 @media(max-width:720px){.sidebar{width:100%}.main-wrap{margin-left:0}.nav-item{white-space:nowrap}.right-column{grid-template-columns:1fr}.journey-content{grid-template-columns:1fr}.chart{width:100%;margin-top:12px}.header-right{flex-shrink:0}.demo-tag{font-size:10px}.goal>div:first-child{flex-wrap:wrap}.goal-values{flex-wrap:wrap}.family-banner{flex-wrap:wrap}.family-session{flex-wrap:wrap}.session-numbers{grid-template-columns:repeat(2,1fr)}.toolbar>span{line-height:1.6}.support .secondary{white-space:normal}.brand-sub{font-size:9px}.modal-header h2{line-height:1.5}.report-card>div:nth-child(2){min-width:0}.breadcrumb{line-height:1.6}.header-right{gap:6px}}
 .sidebar{overflow-y:auto}
 @media(min-width:721px) and (max-width:1400px){.dashboard-grid{grid-template-columns:1fr}.right-column{display:grid;grid-template-columns:1fr 1fr}.journey-panel{grid-row:3}.activity{grid-row:4}}
+
+.session-dates-action { margin-top: 18px; }
+.session-date-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.session-date-group h3 { margin: 20px 0 8px; }
+.session-date-list { list-style: none; margin: 0; padding: 0; }
+.session-date-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6px 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.session-date-list li:last-child { border-bottom: 0; }
+.session-date-list strong { font-size: 14px; }
+.session-date-list p { font-size: 13px; margin: 4px 0 0; }
+@media (max-width: 540px) {
+  .session-date-groups { grid-template-columns: 1fr; gap: 12px; }
+}
