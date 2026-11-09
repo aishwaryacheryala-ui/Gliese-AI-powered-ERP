@@ -16,7 +16,7 @@ Open http://127.0.0.1:5173. Node.js 18+ is sufficient; there are no dependencies
 2. Pause/resume, record observations, and complete the session.
 3. Open Reports & approvals and approve the generated session summary.
 4. Open Family portal to see the approved summary and updated session status.
-5. Explore Patients & families to register a patient, link family members, and revoke/restore demo access.
+5. Explore Patients & families to view patient profiles, link family members, and revoke or restore demo access.
 6. Use Schedule to switch calendar views, add sessions, and demonstrate conflict detection.
 7. Explore Treatment plans, Goals & progress, and Communication for the other modules.
 
