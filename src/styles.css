@@ -78,3 +78,103 @@ footer{gap:20px;line-height:1.7;flex-wrap:wrap}
 @media (max-width: 900px) {
   .live-session-panels { grid-template-columns: 1fr; gap: 16px; }
 }
+
+/* Keep narrow layouts within the viewport and let long content wrap. */
+.main-wrap, main, .panel, .metric, .person > div, .calendar-event,
+.session-date-group, .notification > div, .report-card > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.nav-toggle, .calendar-event .agenda-therapist { display: none; }
+.calendar-week .calendar-head, .calendar-month .calendar-head { display: none; }
+.week-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.month-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.calendar-event { white-space: normal; }
+.modal { max-height: calc(100dvh - 24px); overscroll-behavior: contain; }
+#patient-select { max-width: 100%; }
+.attention-icon { flex-shrink: 0; }
+.report-actions { flex-shrink: 0; }
+.header-right { min-width: 0; }
+
+@media (max-width: 1050px) {
+  .week-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 960px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 14px clamp(14px, 3vw, 24px);
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .brand { width: fit-content; max-width: 100%; padding: 0; }
+  .workspace-label, .sidebar-bottom { display: none; }
+  .nav-toggle { display: inline-flex; min-height: 44px; align-items: center; }
+  .sidebar nav { display: none; grid-column: 1 / -1; margin: 0; }
+  .sidebar nav.is-open {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .nav-item { min-height: 44px; width: 100%; white-space: normal; margin: 0; }
+  .main-wrap { margin-left: 0; }
+  header { height: auto; min-height: 58px; gap: 12px; padding: 10px clamp(14px, 3vw, 24px); }
+  main { padding: 22px clamp(14px, 3vw, 28px); }
+  .calendar-head, .calendar-row, .month-grid, .week-grid { min-width: 0; }
+}
+
+@media (max-width: 720px) {
+  .heading-actions, .session-controls { flex-wrap: wrap; max-width: 100%; }
+  .primary, .secondary, .text-button, .tabs button, .segmented button { min-height: 44px; }
+  .toolbar input, .toolbar select, .schedule-filters select, #patient-select,
+  .field input, .field textarea, .field select { min-height: 44px; font-size: 16px; }
+  .table-wrap { overflow: visible; }
+  .session-table { display: block; white-space: normal; }
+  .session-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(50%);
+    overflow: hidden;
+  }
+  .session-table tbody { display: block; }
+  .session-table tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .session-table tr:last-child { border-bottom: 0; }
+  .session-table td { padding: 0; border: 0; }
+  .session-table td:nth-child(-n + 2), .session-table td[colspan] { grid-column: 1 / -1; }
+  .session-table td:nth-child(4), .session-table td:nth-child(5) { justify-self: end; }
+  .session-table td:nth-child(5) { grid-column: 1 / -1; }
+  .session-table .empty { padding: 16px; }
+  .calendar-day .calendar-head { display: none; }
+  .calendar-day .calendar-row { display: block; min-height: 0; padding: 12px; }
+  .calendar-day .calendar-row > span { display: block; padding: 0 0 8px; }
+  .calendar-day .calendar-row > div { padding: 0; border: 0; }
+  .calendar-day .calendar-row > div:empty, .calendar-day .calendar-row:not(:has(.calendar-event)) { display: none; }
+  .calendar-day .agenda-therapist { display: block; }
+  .calendar-week .week-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .month-grid button { min-height: 44px; padding: 6px 2px; text-align: center; }
+  .month-grid button span { font-size: 10px; line-height: 1.2; }
+  .month-grid button small { display: none; }
+  .report-actions { width: 100%; gap: 8px; flex-wrap: wrap; }
+}
+
+@media (max-width: 380px) {
+  .sidebar nav.is-open, .calendar-week .week-grid { grid-template-columns: 1fr; }
+  .metric { padding: 12px; }
+  .metric-top { flex-wrap: wrap; }
+  .breadcrumb span { margin: 0 4px; }
+  .header-right .demo-tag { letter-spacing: 0; padding-inline: 5px; }
+}
